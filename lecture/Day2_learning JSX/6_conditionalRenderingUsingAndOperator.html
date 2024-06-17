@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- 
+and operator
+  last truthy 
+ // first falsey 
+
+   t && t = t
+   t && f  = f
+   f && t = f
+   f && f = f
+
+
+
+"0, null, "", undefined, false" = true
+ 
+ && 
+
+     -->
+
+
+     <div id="root"></div>
+
+
+     <script type="text/babel">
+ 
+         function App() {
+             let login = true;
+ 
+             return (
+                 <>
+                     <h1>Hello {login ? "Alexa" : 'User'}</h1>
+                     <h2>youre {login && "welcome" && 10 > 20 ? "true" : "false"}</h2>
+                 </>
+             )
+         }
+ 
+ 
+         let createRoot = ReactDOM.createRoot(document.getElementById('root'));
+         createRoot.render(<App />)
+     </script>
+    
+</body>
+</html>

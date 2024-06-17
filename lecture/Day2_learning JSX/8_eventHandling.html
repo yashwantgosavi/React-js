@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        let a = 0;
+        let wicket = 0;
+        function add(score) {
+            if (wicket < 10) {
+                a += score;
+                console.log(a);
+                reactRoot.render(<App />);
+            }
+
+        }
+
+        function addWicket() {
+            if (wicket < 10) {
+                wicket += 1;
+                reactRoot.render(<App />);
+            }
+        }
+        let ScoreBtn = () => {
+            return (<>
+                <button onClick={() => add(1)}>1</button>
+                <button onClick={() => add(2)}>2</button>
+                <button onClick={() => add(3)}>3</button>
+                <button onClick={() => add(4)}>4</button>
+                <button onClick={() => add(5)}>5</button>
+                <button onClick={() => add(6)}>6</button>
+                <button onClick={addWicket}>wicket</button>
+            </>)
+        }
+
+        
+        const App = () => {
+            return (
+                <>
+                    <h2>{a} / {wicket}</h2>
+                    <ScoreBtn />
+                </>
+            )
+        }
+        let reactRoot = ReactDOM.createRoot(document.getElementById('root'));
+        reactRoot.render(<App />);
+    </script>
+</body>
+
+</html>

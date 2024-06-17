@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        let a = 0;
+        let wicket = 0;
+        let ballWiseRes = [];
+
+        function add(score) {
+            if (wicket < 10) {
+                a += score;
+                ballWiseRes.push(score);
+                console.log(a);
+                reactRoot.render(<App />);
+                console.log(ballWiseRes);
+            }
+
+        }
+        function addWicket() {
+            if (wicket < 10) {
+                ballWiseRes.push("W");
+                wicket += 1;
+                reactRoot.render(<App />);
+                console.log(ballWiseRes);
+            }
+        }
+        let ScoreBtn = () => {
+            return (<>
+                <button onClick={() => add(1)}>1</button>
+                <button onClick={() => add(2)}>2</button>
+                <button onClick={() => add(3)}>3</button>
+                <button onClick={() => add(4)}>4</button>
+                <button onClick={() => add(5)}>5</button>
+                <button onClick={() => add(6)}>6</button>
+                <button onClick={addWicket}>wicket</button>
+            </>)
+        }
+
+        let Result = () => {
+            return (
+                <>
+                    {ballWiseRes.map((res, index) => (
+                        <>
+                        {index % 6 === 0 ? <br/> : null}
+                        <span key={index}>{res === 0 ? <strong key={index}>.</strong> : res}</span>&nbsp;&nbsp;&nbsp;
+                        </>
+                    ))}
+                </>
+            )
+        }
+
+
+
+        const App = () => {
+            return (
+                <>
+                    <h2>{a} / {wicket}</h2>
+                    <ScoreBtn />
+                    <Result />
+                </>
+            )
+        }
+        let reactRoot = ReactDOM.createRoot(document.getElementById('root'));
+        reactRoot.render(<App />);
+    </script>
+</body>
+
+</html>

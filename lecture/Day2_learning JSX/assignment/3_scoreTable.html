@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- create student score table by using objects-->
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            let students = {
+                student1: {
+                    name: 'yashwant',
+                    rollNo: 1,
+                    score: 34
+                },
+                student2: {
+                    name: 'deepak',
+                    rollNo: 2,
+                    score: 99
+                },
+                student3: {
+                    name: 'rahul',
+                    rollNo: 3,
+                    score: 60
+                }
+            };
+
+            const rows = Object.keys(students).map(studentKey => {
+                const student = students[studentKey];
+                return (
+                    <tr key={studentKey}>
+                        <td>{studentKey}</td>
+                        <td>{student.name}</td>
+                        <td>{student.rollNo}</td>
+                        <td>{student.score}</td>
+                    </tr>
+                );
+            });
+
+            return (
+                <>
+                    <table border='1'>
+                        <tbody>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Roll No</th>
+                                <th>Score</th>
+                            </tr>
+                            {rows}
+                        </tbody>
+                    </table>
+                </>
+            );
+        }
+
+        let reactDom = ReactDOM.createRoot(document.getElementById('root'));
+        reactDom.render(<App />);
+    </script>
+</body>
+</html>

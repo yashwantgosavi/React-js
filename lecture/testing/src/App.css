@@ -1,0 +1,44 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.card {
+    border: 1px solid black;
+    width: 80%;
+    height: fit-content;
+    padding: 30px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+button {
+    height: fit-content;
+}
+
+li {
+    float: left;
+    margin: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    height: 80px;
+}
+
+
+.a {
+    display: flex;
+    margin: auto;
+}

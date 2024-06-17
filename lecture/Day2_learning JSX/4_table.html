@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       <style>
+        img{
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+        function Students() {
+            let studentData = [
+                {
+                    name: 'fadin',
+                    rollNo: 12,
+                    marks: 90,
+                    src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                },
+                {
+                    name: 'moyin',
+                    rollNo: 13,
+                    marks: 60,
+                    src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D'
+                },
+                {
+                    name: 'yash',
+                    rollNo: 14,
+                    marks: 35,
+                    src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww'
+                }
+            ]
+            return (
+                <>
+                    <h1>Student List</h1>
+                    <table border='1'>
+                        <thead>
+                            <tr>
+                                <th>Sr.No</th>
+                                <th>Name</th>
+                                <th>Roll No</th>
+                                <th>Marks</th>
+                                <th>Images</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {studentData.map((student, index) =>
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{student.name}</td>
+                                    <td>{student.rollNo}</td>
+                                    <td>{student.marks}</td>
+                                    <td><img src={student.src} alt={student.name} /></td>
+                                </tr>
+                            )}
+                        </tbody>
+
+                    </table>
+                </>
+            )
+
+        };
+        // Teachers
+        function Teachers() {
+            let TeachersData = [
+                {
+                    name: 'fadin',
+                    rollNo: 12,
+                    marks: 90,
+                    src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                },
+                {
+                    name: 'moyin',
+                    rollNo: 13,
+                    marks: 60,
+                    src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D'
+                },
+                {
+                    name: 'yash',
+                    rollNo: 14,
+                    marks: 35,
+                    src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww'
+                }
+            ]
+            return (
+                <>
+                    <h1>Teachers List</h1>
+                    <table border='1'>
+                        <thead>
+                            <tr>
+                                <th>Sr.No</th>
+                                <th>Name</th>
+                                <th>Roll No</th>
+                                <th>Marks</th>
+                                <th>Images</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {TeachersData.map((teacher, index) =>
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{teacher.name}</td>
+                                    <td>{teacher.rollNo}</td>
+                                    <td>{teacher.marks}</td>
+                                    <td><img src={teacher.src} alt={teacher.name} /></td>
+                                </tr>
+                            )}
+                        </tbody>
+
+                    </table>
+                </>
+            )
+
+        }
+
+
+        function App() {
+            return (
+                <>
+                    <Students />
+                    <Teachers/>
+                </>
+            )
+        };
+
+
+        let reactRoot = ReactDOM.createRoot(document.getElementById('root'));
+        reactRoot.render(<App />);
+
+    </script>
+</body>
+
+</html>
