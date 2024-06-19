@@ -1,26 +1,42 @@
 import React from 'react';
 import './App.css';
 import Nav from './Nav';
+import styled from 'styled-components';
+
+const Cards = styled.div`
+background-color:yellow;
+`
 
 
 class MovieCard extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            title: 'Avengers',
-            desc: 'lorem Ipsum is dummy text',
-            imgSrc: 'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8815512_p_v8_ax.jpg',
-            button: 'Add to Cart'
+
+    addStars = () => {
+        if (this.state.star == 5) {
+            return
         }
+        this.setState({
+            stars: this.state.star += 1
+        })
     }
-
-
+    descStars = () => {
+        if (this.state.star == 0) {
+            return
+        }
+        this.setState({
+            stars: this.state.star -= 1
+        })
+    }
+    handleFav = () => {
+        this.setState({
+            fav: !this.state.fav
+        })
+    }
     render() {
-        const { title, desc, imgSrc, button } = this.state;
+        const { title, desc, imgSrc, button, stars, fav } = this.props.movies;
         return (
             <>
                 <Nav />
-                <div className='card'>
+                <Cards>
                     <div className='row'>
                         <img src={imgSrc} alt='' />
                         <h4>{title}</h4>
@@ -29,12 +45,13 @@ class MovieCard extends React.Component {
                     </div>
                     <footer>
                         <div className='a'>
-                                <div>-</div>
-                                <div>Rating : 5</div>
-                                <div>+</div>
+                            <div onClick={this.descStars.bind(this)}>-</div>
+                            <div>Rating : {stars}</div>
+                            <div onClick={this.addStars.bind(this)}>+</div>
+                            {fav ? <button onClick={this.handleFav}>Favourite</button> : <button onClick={this.handleFav}>Un-Favourite</button>}
                         </div>
                     </footer>
-                </div>
+                </Cards>
             </>
         )
     }
@@ -43,3 +60,5 @@ class MovieCard extends React.Component {
 
 
 export default MovieCard;
+
+

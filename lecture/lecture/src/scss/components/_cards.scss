@@ -1,0 +1,63 @@
+.card {
+    width: 50%;
+    border: 1px solid lightblue;
+    padding: 15px;
+    border-radius: 25px;
+
+}
+
+.cardsImg,
+.cardDetails {
+    width: 50%;
+}
+
+.cardsImg {
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.card2 {
+    column-gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+p {
+    max-height: 40%;
+    overflow-y: scroll;
+}
+
+.rating img {
+    width: 30px;
+    height: 30px;
+}
+
+#cardsSection {
+    margin: 100px auto;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.rating,
+.btn {
+    column-gap: 5px;
+}
+
+button{
+    border: none;
+    background-color: lightgrey;
+}
+.un-subscribe {
+    background-color: red;
+}
+
+.subscribe {
+    background-color: green;
+}

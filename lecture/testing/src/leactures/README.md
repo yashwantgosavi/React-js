@@ -14,4 +14,14 @@
 # States in react
 # .bind()
 
+# propse
+  - parent to child propse
+  - defaultProps
+
+# Styling in CSS
+   - inline css
+   - internal css
+   - scopes
+   - npm install styled-components
+     - tagged template literals
 
