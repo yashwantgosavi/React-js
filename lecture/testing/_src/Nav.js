@@ -19,8 +19,6 @@ class Nav extends React.Component {
             </Navbar>
         )
     }
-
-
 }
 
 export default Nav;

@@ -1,5 +1,5 @@
 import Nav from "./components/Nav";
-import MovieCards from "./components/Cards";
+import MovieCards from "./components/Movielist";
 function App() {
   return (
     <>

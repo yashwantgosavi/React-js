@@ -17,6 +17,8 @@
 # propse
   - parent to child propse
   - defaultProps
+  
+  
 
 # Styling in CSS
    - inline css

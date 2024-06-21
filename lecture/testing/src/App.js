@@ -1,20 +1,11 @@
-import React from 'react';
-import Students from './Students';
+import MovieList from "./MovieList";
 
-class App extends React.Component {
+export default function App(){
+  return(
+    <>
+    <h1>Movie App</h1>
+    <MovieList />
+    </>
 
-  render() {
-    return (
-      <>
-        <Students />
-        <Students stdName="moyin" />
-      </>
-    )
-  }
+  )
 }
-
-Students.defaultProps = {
-  stdName: "User"
-}
-
-export default App;
